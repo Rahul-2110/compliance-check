@@ -26,7 +26,9 @@ export const validatePolicyRequest = (
 
 const ComplianceRequestSchema = z.object({
   website_url: z.string().url(),
-  policy_id: z.string()
+  policy_id: z.string().optional(),
+  content: z.string().optional(),
+  policy_url: z.string().url().optional(),
 });
 
 export const validateComplianceRequest = (
