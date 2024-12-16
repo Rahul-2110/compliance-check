@@ -72,9 +72,8 @@ compliance-checker/
 
 ## Prerequisites
 
-- Node.js (v18 or higher)
-- npm or yarn
-- OpenAI API key
+- Node.js (v20 or higher)
+- npm 
 
 ## Installation
 
@@ -162,6 +161,8 @@ Postman collection available [here](https://www.postman.com/example-collections/
 ### Check Compliance
 
 **Endpoint**: `POST /api/v1/compliance/check`
+
+Note: Some websites dont block scraping, so you may need to add a content field to the request body
 
 **Request Body**:
 ```json
@@ -263,3 +264,13 @@ The API implements comprehensive error handling:
 - `429`: Too Many Requests - Rate limit exceeded
 - `500`: Internal Server Error - Server-side issues
 - `503`: Service Unavailable - External service issues
+
+
+
+## Future Enhancements
+
+- Add more LLM providers
+- Add Basic Auth
+- Advanced LLM provider configuration using API's
+- Better complaince extraction and parsing
+
