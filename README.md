@@ -88,7 +88,7 @@ cd compliance-checker
 npm install
 ```
 
-5. Update the `.env` with your configuration or update the conf.ts file with default values:
+5. Update the `.env` with your configuration or update the config.ts file with default values:
 ```
 NODE_ENV=development
 PORT=3000
