@@ -101,7 +101,7 @@ LLM_TEMPERATURE=0.1  # Optional: Control randomness
 LLM_MAX_TOKENS=2048  # Optional: Max response length
 RATE_LIMIT_WINDOW_MS=900000
 RATE_LIMIT_MAX_REQUESTS=100
-LLM_API_KEY=your-openai-api-key
+LLM_API_KEY=your-openai-api-key  # OpenAI API key (API Key with a pro subscription)
 ```
 
 ## Running the Application
