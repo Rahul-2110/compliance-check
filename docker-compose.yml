@@ -1,0 +1,30 @@
+version: '3.8'
+services:
+  mongo-compliance:
+    container_name: mongodb-compliance-checker
+    image: mongo:4.4.29
+    ports:
+      - "28000:27017"
+    volumes:
+      - mongodata:/data/db1
+  app:
+    container_name: myapp
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    depends_on:
+      - mongo-compliance
+    environment:
+      DB_HOST: mongo-compliance:27017 
+      DB_NAME: compliance-checker
+      PORT: 3000
+      NODE_ENV: development
+      LLM_PROVIDER: openai
+      LLM_MODEL_NAME: gpt-4o-mini
+      LLM_TEMPERATURE: 1
+      LLM_MAX_TOKENS: 2048
+      LLM_API_KEY: your-openai-api-key
+volumes:
+  mongodata:
